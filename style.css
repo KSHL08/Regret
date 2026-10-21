@@ -1,0 +1,381 @@
+:root {
+  --pink-1: #ffe7f0;
+  --pink-2: #ffd2e4;
+  --pink-3: #ffb8d4;
+  --card: #fffafc;
+  --shadow: rgba(255, 128, 170, 0.25);
+  --yes: #ff5c6c;
+  --no: #5aa6ff;
+  --next: #ff9ec7;
+  --text: #4a2b3a;
+  --glow: rgba(255, 92, 108, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Comic Sans MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--pink-1), var(--pink-2), var(--pink-3));
+  overflow: hidden;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 24px 64px;
+}
+
+.card {
+  position: relative;
+  width: min(92vw, 460px);
+  background: var(--card);
+  border-radius: 30px;
+  padding: 30px 26px 32px;
+  text-align: center;
+  box-shadow: 0 18px 60px var(--shadow);
+  z-index: 2;
+  animation: cardBounce 3.6s ease-in-out infinite;
+}
+
+@keyframes cardBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.screens {
+  position: relative;
+}
+
+.screen {
+  opacity: 0;
+  transform: translateY(8px);
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.screen.active {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 2000px;
+  pointer-events: auto;
+}
+
+.image {
+  font-size: 58px;
+  line-height: 1;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 10px;
+  position: relative;
+  min-height: 56px;
+}
+
+.proposal-actions {
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn:hover {
+  box-shadow: 0 0 18px var(--glow);
+  filter: brightness(1.05);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn.yes {
+  background: var(--yes);
+}
+
+.btn.no {
+  background: var(--no);
+  position: relative;
+}
+
+.btn.next {
+  background: var(--next);
+  color: #4a2b3a;
+  margin-top: 16px;
+}
+
+
+.message {
+  min-height: 24px;
+  margin: 8px 0 0;
+  font-weight: 600;
+  color: #ff5c6c;
+}
+
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.gift-card {
+  background: #fff4f9;
+  border-radius: 18px;
+  padding: 14px 10px;
+  box-shadow: 0 8px 20px rgba(255, 145, 179, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.gift-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 24px rgba(255, 145, 179, 0.28);
+}
+
+.gift-emoji {
+  font-size: 32px;
+}
+
+.quiz-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.quiz-card {
+  background: #fff1f7;
+  border-radius: 16px;
+  padding: 12px;
+  text-align: left;
+  box-shadow: 0 10px 18px rgba(255, 156, 191, 0.18);
+}
+
+.quiz-question {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.option-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: white;
+  color: var(--text);
+  border: 1px solid #ffd3e4;
+  border-radius: 12px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.option-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 140, 182, 0.2);
+}
+
+.option-btn.correct {
+  background: #e6ffef;
+  border-color: #8ed9a8;
+}
+
+.option-btn.wrong {
+  background: #ffe3ea;
+  border-color: #ff9ab3;
+}
+
+.letter-card {
+  background: #fffdf8;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 14px 30px rgba(195, 120, 146, 0.2);
+  position: relative;
+  text-align: left;
+  font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+}
+
+.letter-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 213, 228, 0.4) 0px,
+    rgba(255, 213, 228, 0.4) 1px,
+    transparent 1px,
+    transparent 22px
+  );
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+.letter-card p {
+  position: relative;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.letter-heart {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  font-size: 22px;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.submit-animation {
+  font-size: 48px;
+  margin-top: 12px;
+  animation: floatPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes floatPulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.08);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.hearts span {
+  position: absolute;
+  opacity: 0.7;
+  animation: floatUp 10s linear infinite;
+  color: #ff7aa5;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0.9;
+  animation: confettiFall 3.2s ease-out forwards;
+  z-index: 3;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 214, 230, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-card {
+  background: white;
+  padding: 20px 22px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(209, 120, 150, 0.25);
+  width: min(84vw, 320px);
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+@media (max-width: 520px) {
+  h1,
+  h2 {
+    font-size: 22px;
+  }
+
+  .gift-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

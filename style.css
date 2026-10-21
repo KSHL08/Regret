@@ -379,3 +379,45 @@ h2 {
     font-size: 14px;
   }
 }
+/* Mobile-friendly layout */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 24px 16px 64px;
+}
+
+.card {
+  width: min(92vw, 460px);
+  max-width: 100%;
+}
+
+.proposal-actions {
+  position: relative;
+  min-height: 60px;
+}
+
+.btn,
+.gift-card,
+.option-btn {
+  touch-action: manipulation;
+}
+
+.hearts {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer {
+  z-index: 1;
+  pointer-events: none;
+}

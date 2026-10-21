@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Will You Be Mine?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="hearts" aria-hidden="true"></div>
+
+      <section class="card" role="dialog" aria-live="polite">
+        <div class="screens">
+          <section id="proposal" class="screen active" aria-labelledby="proposalTitle">
+            <div class="image" id="proposalImage" aria-hidden="true">(>‿◠)✌</div>
+            <h1 id="proposalTitle">Will you be mine 🥺?</h1>
+            <p class="subtitle" id="proposalSubtitle">I made a tiny world just for us.</p>
+
+            <div class="buttons proposal-actions">
+              <button id="yesBtn" class="btn yes">YES</button>
+              <button id="noBtn" class="btn no">NO</button>
+            </div>
+
+            <p id="proposalMessage" class="message" aria-live="polite"></p>
+          </section>
+
+          <section id="gifts" class="screen" aria-labelledby="giftsTitle">
+            <h2 id="giftsTitle">Something for You 💝</h2>
+            <div id="giftGrid" class="gift-grid"></div>
+            <button id="toQuizBtn" class="btn next">Next</button>
+          </section>
+
+          <section id="quiz" class="screen" aria-labelledby="quizTitle">
+            <h2 id="quizTitle">Quiz for you 🥰</h2>
+            <div id="quizList" class="quiz-list"></div>
+            <p id="quizStatus" class="message"></p>
+            <button id="submitQuizBtn" class="btn next" disabled>Submit</button>
+          </section>
+
+          <section id="submit" class="screen" aria-labelledby="submitTitle">
+            <h2 id="submitTitle">You did it! ✨</h2>
+            <p class="subtitle">Sending your answers with sparkles...</p>
+            <div class="submit-animation" aria-hidden="true">💌</div>
+          </section>
+
+          <section id="final" class="screen" aria-labelledby="letterTitle">
+            <h2 id="letterTitle">A Letter For You 💌</h2>
+            <div class="letter-card">
+              <p id="finalNoteText"></p>
+              <div class="letter-heart" aria-hidden="true">❤</div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div id="giftModal" class="modal" aria-hidden="true">
+        <div class="modal-card">
+          <p id="giftMessage"></p>
+          <button id="closeModalBtn" class="btn yes">Aww</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">Made with ❤️ by Aman Kumar</footer>
+
+    <audio id="bgMusic" preload="auto" loop></audio>
+    <script src="script.js"></script>
+  </body>
+</html>

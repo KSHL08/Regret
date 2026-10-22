@@ -64,12 +64,12 @@ const gifts = [
 const quizQuestions = [
   {
     question: "Who is the absolute boss in this relationship?",
-    options: ["Obviously You ❤️", "Me", "My Mom"],
+    options: ["Obviously You ❤️", "Me", "Both"],
     answerIndex: 0
   },
   {
     question: "What is our cutest activity together?",
-    options: ["Endless hugs", "Arguing about food", "All of the above"],
+    options: ["Endless Talks", "Arguing about food", "All of the above"],
     answerIndex: 2
   }
 ];
